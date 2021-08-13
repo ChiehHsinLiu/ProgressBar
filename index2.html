@@ -56,41 +56,25 @@
       }
 
       render() {
-        console.log('render2', this.state)
-        if (this.props.state.percent === "100%") {
-          return (
+        return (
+          <div>
             <div>
-              <div>
-                <div className="progress-back" style={{ backgroundColor: "rgba(0,0,0,0.2)", width: "7px", height: this.state.height, borderRadius: "10px", float: "Left" }}>
-                  <div className="progress-bar" style={{ backgroundColor: "#fe5196", width: "100%", height: this.state.percent, borderRadius: "10px", float: "Left" }}>
-                  </div>
-                </div>
-                <div id="sec2">
-                  <div style={{ marginLeft: "20px" }}> Section1-2 </div>
-                  <div style={{ marginLeft: "20px" }}> content1-2 </div>
-                  <button onClick={this.change2} style={{ marginLeft: "20px" }}> complete1-2 </button>
+              <div className="progress-back" style={{ backgroundColor: "rgba(0,0,0,0.2)", width: "7px", height: this.state.height, borderRadius: "10px", float: "Left" }}>
+                <div className="progress-bar" style={{ backgroundColor: "#fe5196", width: "100%", height: this.state.percent, borderRadius: "10px", float: "Left" }}>
                 </div>
               </div>
-            </div >
-          )
-        }
-        else {
-          return (
-            <div>
-              <div>
-                <div className="progress-back" style={{ backgroundColor: "rgba(0,0,0,0.2)", width: "7px", height: this.state.height, borderRadius: "10px", float: "Left" }}>
-                  <div className="progress-bar" style={{ backgroundColor: "#fe5196", width: "100%", height: this.state.percent, borderRadius: "10px", float: "Left" }}>
-                  </div>
-                </div>
-                <div id="sec2">
-                  <div style={{ marginLeft: "20px" }}> Section1-2 </div>
-                </div>
-              </div>
-            </div >
-          )
-        }
-      }
+              <div id="sec2">
+                <div style={{ marginLeft: "20px" }}> Section1-2 </div>
 
+                {this.props.state.percent === "100%" &&
+                  <div style={{ marginLeft: "20px" }}> content1-2 </div>}
+                {this.props.state.percent === "100%" &&
+                  <button onClick={this.change2} style={{ marginLeft: "20px" }}> complete1-2 </button>}
+              </div>
+            </div>
+          </div >
+        )
+      }
     }
 
 
@@ -120,8 +104,6 @@
         })
       }
 
-
-
       render() {
         console.log('render1', this.state)
         return (
@@ -141,18 +123,12 @@
 
             <Second state={this.state} />
           </div >
-
         )
       }
-
     }
 
 
-
     ReactDOM.render(<Home />, document.getElementById('root'))
-
-
-
   </script>
 
 </body>
