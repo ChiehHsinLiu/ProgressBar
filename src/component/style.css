@@ -1,0 +1,46 @@
+.fade-enter, .fade-appear {
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-appear-active {
+  opacity: 1;
+  transition: opacity 2s;
+}
+
+.fade-enter-done {
+  opacity: 1;
+}
+
+.fade-exit {
+  opacity:1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.fade-exit-done {
+  opacity: 0;
+}
+
+.Progress {
+  width: 7px;
+  height: 100%;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+.Ball {
+  content: "";
+  width: 35px;
+  height: 35px;
+  position: relative;
+  float: Left;
+  border-radius: 50%;
+  top: -11px;
+  left: -14px;
+  font-size: 10px;
+  text-align: center;
+  line-height: 35px;
+}
